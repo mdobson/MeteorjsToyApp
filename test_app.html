@@ -1,0 +1,45 @@
+<head>
+  <title>test_app</title>
+</head>
+
+<body>
+  {{> hello}}
+  <br/>
+  {{> dataentry}}
+</body>
+
+<template name="hello">
+  <div class="hello">
+    <h1>Hello World!</h1>
+    {{greeting}}
+    <br/>
+    <input type="text" id="test" />
+    <input type="button" value="Click" class="btn"/>
+  </div>
+</template>
+
+<template name="dataentry">
+	<div class="main">
+		{{content}}
+		<br/>
+		<ol>
+		{{#each listofstuff}}
+			<li>
+				{{> item}}
+			</li>
+		{{/each}}
+		</ol>
+	</div>
+</template>
+
+<template name="item">
+	<div class="item">
+		<a href="#">{{value}}</a>
+		<span>{{score}}</span>
+		<br/>
+		<div class="buttons">
+			<input type="button" value="up" class="up"/>
+			<input type="button" value="down" class="down"/>
+		</div>
+	</div>
+</template>
